@@ -64,7 +64,7 @@ app.get("/availability", async (req, res) => {
       MIN(pa.unit_price) AS min_unit_price,
       COUNT(DISTINCT s.id) AS supplier_count
     FROM
-      product p 
+      products p 
     LEFT JOIN
       product_availability pa ON pa.prod_id = p.id
     LEFT JOIN
