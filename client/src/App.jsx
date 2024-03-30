@@ -14,33 +14,32 @@ function App() {
         numberTwo: Math.random()
       };
     }
-
     const getRandomArrayOfTwoNumbersAsArray = () => {
       return [Math.random(), Math.random()];
     }
-
     const twoNumbersTogetherAsObject = getRandomArrayOfTwoNumbers();
     // twoNumbersTogether = ... ? 
-
     const twoNumberTogetherAsArray = getRandomArrayOfTwoNumbersAsObject()'
     // twoNumberTogetherAsArray = ...?
    */
 
   useEffect(() => {
-    fetch("http://localhost:4000/availability")
-      .then((response) => {
+    const fetchData = async (url) => {
+      try {
+        const response = fetch(url);
         if (response.ok) {
-          return response.json();
+          const data = await response.json();
+          setAvailability(data);
         } else {
-          throw new Error("Network response was not ok");
+          throw new Error("server returned status");
         }
-      })
-      .then((data) => {
-        setAvailability(data);
-      })
-      .catch((error) => {
-        console.error("Error fetching availability:", error);
-      });
+      } catch (error) {
+        console.error(error);
+        return [];
+      }
+    };
+
+    fetchData("http://localhost:4000/availability");
   }, []);
 
   return (
@@ -66,5 +65,4 @@ function App() {
     </>
   );
 }
-
 export default App;

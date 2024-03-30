@@ -1,4 +1,4 @@
-import dotenv from "dotenv";
+import dotenv from "dotenv-flow";
 dotenv.config();
 
 function createDatabaseUrl() {
@@ -18,9 +18,11 @@ function createDatabaseUrl() {
   return url.href;
 }
 
-export default {
+const config = {
   dbUrl: createDatabaseUrl(),
   logLevel: process.env.LOG_LEVEL ?? "info",
   port: parseInt(process.env.PORT ?? "3000", 10),
   production: process.env.NODE_ENV === "production",
 };
+
+export default config;

@@ -6,8 +6,6 @@ import ProductAvailability from "./ProductAvailability";
 export default function Product({ productDetails }) {
   const [products, setProducts] = useState([]);
 
-  const [blah, setBlah] = useState("blah");
-
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -28,7 +26,7 @@ export default function Product({ productDetails }) {
   }, []);
 
   const productAvailabilityDetails = data.filter(
-    (availability) => availability.product_id === product.id
+    (availability) => availability.product_id == product.id
   );
 
   return (

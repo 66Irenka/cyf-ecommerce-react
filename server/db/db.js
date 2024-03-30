@@ -11,10 +11,6 @@ const poolConfig = {
 
 const pool = new pg.Pool(poolConfig);
 
-/**
- * A function for establishing a connection to a database.
- */
-
 export const connectDb = async () => {
   let client;
   try {
@@ -27,14 +23,7 @@ export const connectDb = async () => {
   client.release();
 };
 
-/**
- * A function to disconnect from the database.
- */
 export const disconnectDb = () => pool.end();
-
-/**
- * A class that provides the ability to execute SQL queries to the database.
- */
 
 export default {
   query: (...args) => {

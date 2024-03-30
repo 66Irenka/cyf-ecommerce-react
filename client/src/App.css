@@ -1,44 +1,38 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+li {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  flex-wrap: wrap;
+  width: 45rem;
+  justify-content: space-between;
 }
 
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+h2 {
+  color: rgb(23, 23, 23);
+  background-color: rgb(255, 197, 194);
 }
 
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+.productName {
+  color: rgb(66, 119, 142);
+  display: block;
+  border: solid 1.5px;
+  border-color: rgb(62, 7, 211);
+  border-radius: 12px;
+  padding: 5px;
+  margin: 2px;
+  text-align: center;
+  width: 240px;
 }
